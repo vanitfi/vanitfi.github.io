@@ -1,17 +1,384 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
-</head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>Personal Website</title>
+  
+  <!-- HTML -->
+  <style>
+		
+	body{
+		margin:0px;
+		padding: 0px;
+		font-family: poppins;		
+	}
+	*{
+		box-sizing:border-box;
+		scroll-behavior: smooth;
+	}
+	ul{
+		list-style:none;
+	}
+	a{
+		text-decoration:none;
+	}
+	#main{
+		width:100%;
+		height:100vh;
+		position: relative;
+	}
+	nav{				
+		justify-content: space-around;
+		align-items: center;
+		box-shadow: 5px 10px 30px rgba(0,0,0,0.02);
+		position: fixed;
+		left: 0;
+		top: 0;
+		width:100%;
+		z-index: 1;
+		background-color: #FFFFFF;
+	}
+	nav ul{
+		display: flex;
+	}
+	nav ul li a{
+		height:40px;
+		line-height: 43px;
+		margin: 3px;
+		padding: 0px 22px;
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		font-weight: 500;
+		color:#585b5b;
+		letter-spacing: 1px;
+	}
+	nav ul li a:hover{
+		background-color: #2adabc;
+		color:#FFFFFF;
+		box-shadow: 5px 10px 30px rgba(64,198,196,0.3);
+		transition: all ease 0.2s;
+	}
+	
+	
+	.content{
+		width:90%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+	}
+	.model{
+		width:500px;
+		height: 500px;
+	}
+	.model img{
+		width:100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	.main-text{
+		width:500px;
+		padding-left: 20px;
+	}
+	.main-text h1{
+		font-size: 3.5rem;
+		color:#1c3548;
+		margin:0px 0px 10px 0px;
+		line-height: 60px;
+	}
+	.main-text p{
+		color:#747474;
+		
+	}
+	
+	
+	#hobbies{
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin:20px 0px;
+	}
+	.hobbies-heading{
+		color: #1c3548;
+		font-size: 2.5rem;
+		margin:0px;
+		font-weight: 400;
+		letter-spacing: 1px;
+		justify-content: center;
+		align-items: center;
+	}
+	.h-box-container{
+		display: flex;
+		margin-top: 10px;
+		align-items: left;
+		flex-direction: column;		
+	}
+	.hobbies-box{
+		display: flex;
+		margin: 5px 0px;		
+	}
+	.hobbies-img{
+		width:400px;
+		height: 200px;
+	}
+	.hobbies-img img{		
+		width:100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	.h-box-text strong{
+		color:#1c3548;
+		font-size: 1.9rem;
+		margin: 0px;
+		font-weight: 600;
+	}
+	.h-box-text p{
+		color:#747474;		
+	}
+	
+	
+	#rolemodel{
+		width:100%;
+		border-top: 1px solid rgba(58,58,58,0.03);
+		border-bottom: 1px solid rgba(58,58,58,0.03);
+		padding: 50px 0px;
+		background-position: center;
+		background-size: 1000px;
+	}
+	.rolemodel-heading{
+		color: #1c3548;
+		font-size: 2.5rem;
+		margin:0px;
+		font-weight: 400;
+		letter-spacing: 1px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.rm-box-container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		margin:20px 0px;
+	}
+	.rolemodel-box {
+		width:310px;
+		height: 350px;
+		background-color: #FFFFFF;
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 10px;
+		margin: 20px;
+		box-shadow: 5px 10px 30px rgba(0,0,0,0.08);
+	}
+	.rolemodel-box img{
+		width:150px;
+		height: 150px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+	.rolemodel-box strong{
+		color:#1c3548;
+		margin:0px;
+		font-size: 1.1rem;
+		font-weight: 600;
+		margin-top:10px;
+	}
+	
+	.rolemodel-box p{
+		color:#747474;
+		font-size: 0.9rem;
+		margin:0px;
+		text-align: center;
+		display: block;
+		display: -webkit-box;
+		max-width: 80%;
+		-webkit-line-clamp:4;
+		-webkit-box-orient:vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}	
+	.rolemodel-box:hover{
+		transform: translateY(-10px);
+		box-shadow: 5px 10px 30px rgba(0,0,0,0.1);
+		background-color: #23cdaf;
+		transition: all ease 0.2s;
+	}
+	
+	#contact{
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin:10px 0px;
+	}
+	.contact-heading{
+		color: #1c3548;
+		font-size:2.5rem;
+		font-weight: 400;
+		margin:0px;
+		letter-spacing: 1px;
+	}
+	.contact-input{
+		width:550px;
+		height:250px;
+		background-color:#FFFFFF;
+		display:flex;
+		justify-content: center;
+		border-radius: 50px;
+		padding:30px 0 0 0;
+		box-shadow: 5px 10px 30px rgba(0,0,0,0.08);
+		border-radius: 25px;
+	}
+
+  </style>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
 
-<h1>ABOUT CODING4ALL</h1>
-
-<p>Welcome everyone! We are excited to start thissssssssss..................</p>
-
-
-
+	<section id="main">
+	<nav>
+	<ul class="menu">
+		<li><a href="#main">Home</a></li>	
+		<li><a href="#hobbies">My Hobbies</a></li>	
+		<li><a href="#rolemodel">My Role Models</a></li>	
+		<li><a href="#dreams">My Dreams</a></li>	
+		<li><a href="#contact">Contact Me</a></li>	
+	</ul>
+	</nav>
+    </section>
+	
+	<!--content----------------->
+	<div class="content">
+	<!--model--------------->
+	<div class="model">
+		<img src="https://i1.sndcdn.com/artworks-000100101162-vt1uv6-t500x500.jpg"/>	
+	</div>
+	<!--text-------------->
+	<div class="main-text">
+		<h1>Hello, I am Gummy Bear</h1>
+		<p>Welcome to my personal website</p>
+	</div>
+	</div>
+    
+	
+	<section id="hobbies">
+	<!--heading-->
+	<div class="hobbies-heading">
+	<h3>My Hobbies</h3>
+	</div>
+		
+	<!--hobbies-box-container----------->
+	<div class="h-box-container">
+		<!--hobbies-box-------------->
+		<div class="hobbies-box">
+		<!--icon------->
+		<div class="hobbies-img">
+		<img src="http://blog.esl-languages.com/wp-content/uploads/2015/01/cricket-wicket.jpg"/>	
+		</div>
+		<!--hobbies-box-text--------->
+		<div class="h-box-text">
+		<strong>Cricket</strong>
+		<p>aaaaaaaaaaaaaaaaaaa</p>
+		</div>
+		</div>
+		<!--hobbies-box-------------->
+		<div class="hobbies-box">
+		<!--icon------->
+		<div class="hobbies-img">
+		<img src="https://www.computersciencedegreehub.com/wp-content/uploads/2016/02/what-is-coding-1024x683.jpg"/>	
+		</div>
+		<!--hobbies-box-text--------->
+		<div class="h-box-text">
+		<strong>Coding</strong>
+		<p>bbbbbbbbbbbbbbbbbbbb</p>
+		</div>		
+		</div>
+	</div>
+	
+	
+	</section>
+	
+	<!--Role Models----------------------------------->
+	<section id="rolemodel">
+	<!--heading------->
+	<div class="rolemodel-heading">
+	<h3>My Role Models</h3>
+	</div>
+	<!--rolemodel-box-container--------------->
+	<div class="rm-box-container">
+	<!--box-1----->	
+	<div class="rolemodel-box">
+		<!--img-------->
+		<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2016/04/albert-einstein-1145030_1280-150x150.jpg"/>
+		<!--details/comment------>
+		<strong>Albert Einstein</strong>
+		<p>"A person who never made a mistake never tried anything new." </p>
+	</div>
+		<!--box-2----->	
+	<div class="rolemodel-box">
+		<!--img-------->
+		<img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201811/mary-kom-660_083112023428.jpeg?BbLNQPcddht0fbyLnB2VGfY8Ul3QSLXb&size=770:433"/>
+		<!--details/comment------>
+		<strong>Mary Kom</strong>
+		<p>"Rest if you must, but don't quit it."</p>
+	</div>
+		<!--box-3----->	
+	<div class="rolemodel-box">
+		<!--img-------->
+		<img src="https://cdn.wealthygorilla.com/wp-content/uploads/2016/04/dalai-lama-1169298_1280-150x150.jpg"/>
+	    <!--details/comment------>
+		<strong>The Dalai Lama</strong>
+		<p>"Be kind whenever possible."</p>
+		
+	</div>
+	</div>
+	</section>
+	
+	<!--contact------------------------->
+	<section id="contact">
+	<!--heading---------------->
+	<div class="contact-heading">
+	<h3>Contact Me</h3>
+	</div>
+	<!--input form----------------->
+	<div align="center" class="contact-input" >
+		<form action="#">
+		Enter your name:
+		<input type="text" name="UserName" size=35 maxlength=35 value=""></br></br>
+		Your E-mail ID:
+		<input type="email" name="emailID" size=36 maxlength=36 value=""></br></br>
+		What's your gender?
+		<input type="radio" name="exe" value=1>Male
+		<input type="radio" name="exe" value=2>Female
+		</br></br>
+		What do you do currently?
+		<select name="occupation" ><option>
+		<option value=1 selected = "true">Student
+		<option value=2 >Teacher
+		<option value=3 >Working professional
+		<option value=4 >Retired
+		</select>
+		</br></br>
+		<input type=submit value="Submit form" >
+		</form>
+	</div>
+	</section>
+  
 </body>
 </html>
